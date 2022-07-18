@@ -60,7 +60,7 @@ export const DISHES = [
       {
         id: 0,
         rating: 5,
-        comment: "Imagine all the eatables, living in conFusion!",
+        comment: "Hấp dẫn",
         author: "John Lemon",
         date: "2012-10-16T17:57:28.556094Z",
       },
@@ -108,7 +108,7 @@ export const DISHES = [
       {
         id: 0,
         rating: 5,
-        comment: "Imagine all the eatables, living in conFusion!",
+        comment: "Tuyệt vời",
         author: "John Lemon",
         date: "2012-10-16T17:57:28.556094Z",
       },
@@ -156,7 +156,7 @@ export const DISHES = [
       {
         id: 0,
         rating: 5,
-        comment: "Imagine all the eatables, living in conFusion!",
+        comment: "Ok luôn",
         author: "John Lemon",
         date: "2012-10-16T17:57:28.556094Z",
       },
