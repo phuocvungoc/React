@@ -9,7 +9,7 @@ import {
 } from "reactstrap";
 import dateFormat from "dateformat";
 
-class Dish extends Component {
+class DishDetail extends Component {
   constructor(props) {
     super(props);
     this.state = [];
@@ -38,7 +38,7 @@ class Dish extends Component {
   renderDish(dish) {
     if (dish != null)
       return (
-        <div className="container col-12 col-md-5 m-1">
+        <div className="col-12 col-md-5 m-1">
           <Card>
             <CardImg top src={dish.image} alt={dish.name} />
             <CardBody>
@@ -53,12 +53,14 @@ class Dish extends Component {
 
   render() {
     return (
-      <div className="row">
-        {this.renderDish(this.props.dishes)}
-        {this.renderComment(this.props.dishes)}
+      <div className="container">
+        <div className="row">
+          {this.renderDish(this.props.dish)}
+          {this.renderComment(this.props.dish)}
+        </div>
       </div>
     );
   }
 }
 
-export default Dish;
+export default DishDetail;
