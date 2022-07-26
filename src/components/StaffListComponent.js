@@ -18,6 +18,7 @@ class StaffList extends Component {
     };
     this.toggle = this.toggle.bind(this);
     this.handleStaffSelected = this.handleStaffSelected.bind(this);
+    this.handleColSelected = this.handleColSelected.bind(this);
   }
 
   handleStaffSelected(staff) {
@@ -28,6 +29,10 @@ class StaffList extends Component {
     this.setState({
       dropdownOpen: !this.state.dropdownOpen,
     });
+  }
+
+  handleColSelected(col) {
+    this.setState({ columDefault: col });
   }
 
   render() {
@@ -64,10 +69,34 @@ class StaffList extends Component {
                 Kiểu hiển thị
               </DropdownToggle>
               <DropdownMenu>
-                <DropdownItem>6 cột</DropdownItem>
-                <DropdownItem>4 cột</DropdownItem>
-                <DropdownItem>3 cột</DropdownItem>
-                <DropdownItem>2 cột</DropdownItem>
+                <DropdownItem
+                  onClick={() =>
+                    this.handleColSelected("col-lg-2 col-md-6 mt-3")
+                  }
+                >
+                  6 cột
+                </DropdownItem>
+                <DropdownItem
+                  onClick={() =>
+                    this.handleColSelected("col-lg-3 col-md-6 mt-1")
+                  }
+                >
+                  4 cột
+                </DropdownItem>
+                <DropdownItem
+                  onClick={() =>
+                    this.handleColSelected("col-lg-4 col-md-6 mt-1")
+                  }
+                >
+                  3 cột
+                </DropdownItem>
+                <DropdownItem
+                  onClick={() =>
+                    this.handleColSelected("col-lg-6 col-md-6 mt-1")
+                  }
+                >
+                  2 cột
+                </DropdownItem>
               </DropdownMenu>
             </ButtonDropdown>
           </div>
