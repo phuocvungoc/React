@@ -7,7 +7,7 @@ class StaffList extends Component {
     super(props);
     this.state = {
       staffSelected: null,
-      columDefault: "col-12 col-md-6 col-lg-4 mt-3",
+      columDefault: "col-12 col-md-6 col-lg-3 mt-3",
     };
   }
 
@@ -24,9 +24,9 @@ class StaffList extends Component {
               this.handleStaffSelected(staff);
             }}
           >
-            <CardBody>
-              <CardImg src={staff.image} alt={staff.name} />
-              <CardTitle>{staff.name}</CardTitle>
+            <CardBody className="border border-success rounded">
+              <CardImg className="rounded" src={staff.image} alt={staff.name} />
+              <CardTitle className="text-center mt-4">{staff.name}</CardTitle>
             </CardBody>
           </Card>
         </div>
