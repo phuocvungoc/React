@@ -4,7 +4,7 @@ import dateFormat from "dateformat";
 
 function RenderImg({ staff }) {
   return (
-    <div className="col-12 col-md-5 m-1">
+    <div>
       <Card>
         <CardImg src={staff.image} alt={staff.name} />
       </Card>
@@ -14,7 +14,7 @@ function RenderImg({ staff }) {
 
 function RenderDetails({ staff }) {
   return (
-    <div className="col-12 col-md-5 m-1">
+    <div>
       <CardBody>
         <CardTitle>Họ và tên: {staff.name}</CardTitle>
         <CardText>Ngày sinh: {dateFormat(staff.doB, "dd/mm/yyyy")}</CardText>
@@ -34,8 +34,20 @@ const RenderStaff = (props) => {
     return (
       <Card className="m-2">
         <div className="row">
-          <RenderImg staff={props.staff} />
-          <RenderDetails staff={props.staff} />
+          <div className="col-12 col-md-5 m-1">
+            <div>
+              <RenderImg staff={props.staff} />
+              <RenderDetails staff={props.staff} />
+            </div>
+            <button
+              type="button"
+              class="close"
+              aria-label="Close"
+              onClick={() => props.handleStaffSelected(null)}
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
         </div>
       </Card>
     );
