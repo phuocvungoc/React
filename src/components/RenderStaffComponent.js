@@ -5,10 +5,10 @@ import dateFormat from "dateformat";
 function RenderDetails({ staff }) {
   return (
     <div className="row">
-      <div className="col-12 col-md-5 m-1">
+      <div className="col-12 col-lg-5 col-sm-5 m-1">
         <CardImg src={staff.image} alt={staff.name} />
       </div>
-      <div className="col-12 col-md-6 m-1">
+      <div className="col-12 col-lg-6 col-sm-6 m-1">
         <CardBody>
           <CardTitle>Họ và tên: {staff.name}</CardTitle>
           <CardText>Ngày sinh: {dateFormat(staff.doB, "dd/mm/yyyy")}</CardText>
@@ -28,8 +28,10 @@ const RenderStaff = (props) => {
   if (props.staff) {
     return (
       <div className="row border border-success rounded mt-3 mb-2">
-        <RenderDetails staff={props.staff} />
-        <div className="col-12 col-md-5 m-1">
+        <div className="col-lg-8 col-sm-10">
+          <RenderDetails staff={props.staff} />
+        </div>
+        <div className="col-12 col-lg-3 col-sm-1 m-1">
           <button
             type="button"
             className="close"

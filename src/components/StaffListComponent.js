@@ -55,7 +55,7 @@ class StaffList extends Component {
 
     return (
       <div className="container">
-        <div className="row mt-3 mb-2">
+        <div className="row mt-3 mb-2 hidden">
           <div className="col-9">
             <h5>Bấm vào nhân viên để xem thông tin chi tiết</h5>
           </div>
