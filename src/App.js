@@ -3,6 +3,7 @@ import { Navbar, NavbarBrand } from "reactstrap";
 import "./App.css";
 import StaffList from "./components/StaffListComponent";
 import { STAFFS } from "./shared/staffs";
+import Footer from "./components/FooterComponent";
 
 class App extends Component {
   constructor(props) {
@@ -21,6 +22,7 @@ class App extends Component {
           </div>
         </Navbar>
         <StaffList staffs={this.state.staffs} />
+        <Footer></Footer>
       </div>
     );
   }

@@ -32,7 +32,7 @@ const RenderStaff = (props) => {
         <div className="col-12 col-md-5 m-1">
           <button
             type="button"
-            class="close"
+            className="close"
             aria-label="Close"
             onClick={() => props.handleStaffSelected(null)}
           >
