@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, CardImg, CardTitle, CardBody, CardText } from "reactstrap";
+import { CardImg, CardTitle, CardBody, CardText } from "reactstrap";
 import dateFormat from "dateformat";
 
 function RenderDetails({ staff }) {

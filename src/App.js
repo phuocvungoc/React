@@ -16,7 +16,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Navbar dark color="primary">
+        <Navbar dark>
           <div className="container">
             <NavbarBrand href="/">Ứng dụng quản lí nhân sự v1.0</NavbarBrand>
           </div>

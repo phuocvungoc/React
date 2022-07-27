@@ -71,9 +71,6 @@ function Footer() {
               >
                 <i className="fa fa-youtube"></i>
               </a>
-              <a className="btn btn-social-icon" href="mailto:">
-                <i className="fa fa-envelope-o"></i>
-              </a>
             </div>
           </div>
         </div>
