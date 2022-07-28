@@ -5,6 +5,7 @@ import StaffList from "./components/StaffListComponent";
 import { STAFFS, DEPARTMENTS } from "./shared/staffs";
 import Header from "./components/HeaderComponent";
 import Footer from "./components/FooterComponent";
+import PhongBan from "./components/PhongBan";
 
 class App extends Component {
   constructor(props) {
@@ -22,11 +23,20 @@ class App extends Component {
           <Header></Header>
           <Switch>
             <Route exact path="/home"></Route>
-            <Route exact path="/nhanvien"></Route>
-            <Route exact path="/phongban"></Route>
+            <Route
+              exact
+              path="/nhanvien"
+              component={() => <StaffList staffs={this.state.staffs} />}
+            ></Route>
+            <Route
+              exact
+              path="/phongban"
+              component={() => (
+                <PhongBan departments={this.state.departments} />
+              )}
+            ></Route>
             <Route exact path="/bangluong"></Route>
           </Switch>
-          <StaffList staffs={this.state.staffs} />
           <Footer></Footer>
         </div>
       </BrowserRouter>
