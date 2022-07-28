@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import { Navbar, NavbarBrand } from "reactstrap";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import "./App.css";
 import StaffList from "./components/StaffListComponent";
-import { STAFFS } from "./shared/staffs";
+import { STAFFS, DEPARTMENTS } from "./shared/staffs";
+import Header from "./components/HeaderComponent";
 import Footer from "./components/FooterComponent";
 
 class App extends Component {
@@ -10,20 +11,25 @@ class App extends Component {
     super(props);
     this.state = {
       staffs: STAFFS,
+      departments: DEPARTMENTS,
     };
   }
 
   render() {
     return (
-      <div className="App">
-        <Navbar dark>
-          <div className="container">
-            <NavbarBrand href="/">Ứng dụng quản lí nhân sự v1.0</NavbarBrand>
-          </div>
-        </Navbar>
-        <StaffList staffs={this.state.staffs} />
-        <Footer></Footer>
-      </div>
+      <BrowserRouter>
+        <div className="App">
+          <Header></Header>
+          <Switch>
+            <Route exact path="/home"></Route>
+            <Route exact path="/nhanvien"></Route>
+            <Route exact path="/phongban"></Route>
+            <Route exact path="/bangluong"></Route>
+          </Switch>
+          <StaffList staffs={this.state.staffs} />
+          <Footer></Footer>
+        </div>
+      </BrowserRouter>
     );
   }
 }
