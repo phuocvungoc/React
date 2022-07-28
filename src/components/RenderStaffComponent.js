@@ -1,5 +1,13 @@
 import React from "react";
-import { CardImg, CardTitle, CardBody, CardText } from "reactstrap";
+import {
+  CardImg,
+  CardTitle,
+  CardBody,
+  CardText,
+  Button,
+  ButtonGroup,
+} from "reactstrap";
+import { Link } from "react-router-dom";
 import dateFormat from "dateformat";
 
 function RenderDetails({ staff }) {
@@ -27,19 +35,18 @@ function RenderDetails({ staff }) {
 const RenderStaff = (props) => {
   if (props.staff) {
     return (
-      <div className="row border border-success rounded mt-3 mb-2">
-        <div className="col-lg-8 col-sm-10">
-          <RenderDetails staff={props.staff} />
-        </div>
-        <div className="col-12 col-lg-3 col-sm-1 m-1">
-          <button
-            type="button"
-            className="close"
-            aria-label="Close"
-            onClick={() => props.handleStaffSelected(null)}
-          >
-            <span aria-hidden="true">&times;</span>
-          </button>
+      <div className="container">
+        <ButtonGroup className="mt-3 success">
+          <Button>
+            <Link to="/nhanvien">Nhân viên</Link>
+          </Button>
+          <Button>{props.staff.name}</Button>
+        </ButtonGroup>
+
+        <div className="row border border-success rounded mt-3 mb-2">
+          <div className="col-lg-8 col-sm-10">
+            <RenderDetails staff={props.staff} />
+          </div>
         </div>
       </div>
     );

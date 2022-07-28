@@ -7,6 +7,7 @@ import Header from "./components/HeaderComponent";
 import Footer from "./components/FooterComponent";
 import PhongBan from "./components/PhongBan";
 import BangLuong from "./components/BangLuong";
+import RenderStaff from "./components/RenderStaffComponent";
 
 class App extends Component {
   constructor(props) {
@@ -18,17 +19,34 @@ class App extends Component {
   }
 
   render() {
+    const RenderWithId = ({ match }) => {
+      return (
+        <RenderStaff
+          staff={
+            this.state.staffs.filter(
+              (staff) => staff.id === parseInt(match.params.id, 10)
+            )[0]
+          }
+        />
+      );
+    };
+
     return (
       <BrowserRouter>
         <div className="App">
           <Header></Header>
           <Switch>
-            <Route exact path="/home"></Route>
+            <Route
+              exact
+              path="/"
+              component={() => <StaffList staffs={this.state.staffs} />}
+            ></Route>
             <Route
               exact
               path="/nhanvien"
               component={() => <StaffList staffs={this.state.staffs} />}
             ></Route>
+            <Route exact path="/nhanvien/:id" component={RenderWithId}></Route>
             <Route
               exact
               path="/phongban"
