@@ -6,6 +6,7 @@ import { STAFFS, DEPARTMENTS } from "./shared/staffs";
 import Header from "./components/HeaderComponent";
 import Footer from "./components/FooterComponent";
 import PhongBan from "./components/PhongBan";
+import BangLuong from "./components/BangLuong";
 
 class App extends Component {
   constructor(props) {
@@ -35,7 +36,11 @@ class App extends Component {
                 <PhongBan departments={this.state.departments} />
               )}
             ></Route>
-            <Route exact path="/bangluong"></Route>
+            <Route
+              exact
+              path="/bangluong"
+              component={() => <BangLuong staffs={this.state.staffs} />}
+            ></Route>
           </Switch>
           <Footer></Footer>
         </div>
