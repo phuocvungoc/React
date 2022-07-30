@@ -6,16 +6,23 @@ import {
   NavbarToggler,
   Collapse,
   NavItem,
+  Button,
+  InputGroup,
+  Input,
 } from "reactstrap";
 import { NavLink } from "react-router-dom";
+import { connect } from "react-redux";
 
 class Header extends Component {
   constructor(props) {
     super(props);
 
     this.toggleNav = this.toggleNav.bind(this);
+    this.onSearch = this.onSearch.bind(this);
+
     this.state = {
       isNavOpen: false,
+      keyword: "",
     };
   }
 
@@ -24,6 +31,16 @@ class Header extends Component {
       isNavOpen: !this.state.isNavOpen,
     });
   }
+
+  onSearch = () => {
+    this.props.onSearch(this.state.keyword);
+  };
+
+  handleChange = (event) => {
+    this.setState({
+      keyword: event.target.value,
+    });
+  };
 
   render() {
     return (
@@ -62,10 +79,27 @@ class Header extends Component {
                 </NavItem>
               </Nav>
             </Collapse>
+            <InputGroup>
+              <Input
+                placeholder="Search..."
+                value={this.state.keyword}
+                onChange={(event) => this.handleChange(event)}
+              />
+              <Button className="btn btn-primary" onClick={this.onSearch}>
+                <i className="fa fa-search" aria-hidden="true"></i>
+              </Button>
+            </InputGroup>
           </div>
         </Navbar>
       </div>
     );
   }
 }
-export default Header;
+
+const mapDispatchToProps = (dispatch, props) => {
+  return {
+    onSearch: (keyword) => dispatch({ type: "ADD_INPUT", payload: keyword }),
+  };
+};
+
+export default connect(null, mapDispatchToProps)(Header);

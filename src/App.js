@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { connect } from "react-redux";
 import "./App.css";
 import StaffList from "./components/StaffListComponent";
 import { STAFFS, DEPARTMENTS } from "./shared/staffs";
@@ -19,6 +20,11 @@ class App extends Component {
   }
 
   render() {
+    var { staffs, keyword } = this.props;
+    var staff = staffs.filter((staff) => {
+      return staff.name.toLowerCase().indexOf(keyword.toLowerCase()) !== -1;
+    });
+
     const RenderWithId = ({ match }) => {
       return (
         <RenderStaff
@@ -34,17 +40,17 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div className="App">
-          <Header></Header>
+          <Header />
           <Switch>
             <Route
               exact
               path="/"
-              component={() => <StaffList staffs={this.state.staffs} />}
+              component={() => <StaffList staffs={staff} />}
             ></Route>
             <Route
               exact
               path="/nhanvien"
-              component={() => <StaffList staffs={this.state.staffs} />}
+              component={() => <StaffList staffs={staff} />}
             ></Route>
             <Route exact path="/nhanvien/:id" component={RenderWithId}></Route>
             <Route
@@ -60,11 +66,19 @@ class App extends Component {
               component={() => <BangLuong staffs={this.state.staffs} />}
             ></Route>
           </Switch>
-          <Footer></Footer>
+          <Footer />
         </div>
       </BrowserRouter>
     );
   }
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    staffs: state.staffs,
+    departments: state.departments,
+    keyword: state.keyword,
+  };
+};
+
+export default connect(mapStateToProps)(App);

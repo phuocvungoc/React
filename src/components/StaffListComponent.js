@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, CardImg, CardTitle, CardBody } from "reactstrap";
+import { Card, CardImg, CardText, CardBody } from "reactstrap";
 import { Link } from "react-router-dom";
 
 function RenderListStaff({ staff }) {
@@ -9,7 +9,7 @@ function RenderListStaff({ staff }) {
         <Link to={`/nhanvien/${staff.id}`}>
           <CardImg className="rounded" src={staff.image} alt={staff.name} />
         </Link>
-        <CardTitle className="text-center mt-4">{staff.name}</CardTitle>
+        <CardText className="text-center mt-4">{staff.name}</CardText>
       </CardBody>
     </Card>
   );
@@ -18,7 +18,7 @@ function RenderListStaff({ staff }) {
 const StaffList = (props) => {
   const staffList = props.staffs.map((staff) => {
     return (
-      <div className="col-12 col-md-6 col-lg-3 mt-3" key={staff.id}>
+      <div className="col-12 col-sm-6 col-md-4 col-lg-2 mt-3" key={staff.id}>
         <RenderListStaff staff={staff} />
       </div>
     );

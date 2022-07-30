@@ -32,7 +32,7 @@ export const ROLE = {
 export const STAFFS = [
   {
     id: 0,
-    name: "Nguyễn Văn A",
+    name: "Vũ Ngọc Phước",
     doB: "1999-01-01T08:59:00.000Z",
     salaryScale: 1.1,
     startDate: "2019-04-30T08:59:00.000Z",
@@ -43,7 +43,7 @@ export const STAFFS = [
   },
   {
     id: 1,
-    name: "Nguyễn Văn B",
+    name: "Nguyễn Văn An",
     doB: "2000-01-01T08:59:00.000Z",
     salaryScale: 1.2,
     startDate: "2019-04-30T08:59:00.000Z",
@@ -54,7 +54,7 @@ export const STAFFS = [
   },
   {
     id: 2,
-    name: "Nguyễn Văn C",
+    name: "Vũ Ngọc Chính",
     doB: "2001-01-01T08:59:00.000Z",
     salaryScale: 1,
     startDate: "2019-04-30T08:59:00.000Z",
@@ -65,7 +65,7 @@ export const STAFFS = [
   },
   {
     id: 3,
-    name: "Nguyễn Văn D",
+    name: "Nguyễn Hiện",
     doB: "2002-01-01T08:59:00.000Z",
     salaryScale: 1,
     startDate: "2019-04-30T08:59:00.000Z",
@@ -76,7 +76,7 @@ export const STAFFS = [
   },
   {
     id: 4,
-    name: "Nguyễn Văn E",
+    name: "Hà Phương Yến",
     doB: "1999-01-01T08:59:00.000Z",
     salaryScale: 1,
     startDate: "2019-04-30T08:59:00.000Z",
@@ -87,7 +87,7 @@ export const STAFFS = [
   },
   {
     id: 5,
-    name: "Nguyễn Văn F",
+    name: "Lê Trung Kiên",
     doB: "2003-01-01T08:59:00.000Z",
     salaryScale: 1,
     startDate: "2019-04-30T08:59:00.000Z",
@@ -98,7 +98,7 @@ export const STAFFS = [
   },
   {
     id: 6,
-    name: "Nguyễn Văn F",
+    name: "Vũ Văn Cường",
     doB: "2003-01-01T08:59:00.000Z",
     salaryScale: 1,
     startDate: "2019-04-30T08:59:00.000Z",
@@ -109,7 +109,7 @@ export const STAFFS = [
   },
   {
     id: 7,
-    name: "Nguyễn Văn F",
+    name: "Phạm Văn Tài",
     doB: "2003-01-01T08:59:00.000Z",
     salaryScale: 1,
     startDate: "2019-04-30T08:59:00.000Z",
@@ -120,7 +120,7 @@ export const STAFFS = [
   },
   {
     id: 8,
-    name: "Nguyễn Văn F",
+    name: "Võ Như Tuyết",
     doB: "2003-01-01T08:59:00.000Z",
     salaryScale: 1,
     startDate: "2019-04-30T08:59:00.000Z",
@@ -131,7 +131,7 @@ export const STAFFS = [
   },
   {
     id: 9,
-    name: "Nguyễn Văn F",
+    name: "Võ Hoài Nhi",
     doB: "2003-01-01T08:59:00.000Z",
     salaryScale: 1,
     startDate: "2019-04-30T08:59:00.000Z",
@@ -142,7 +142,7 @@ export const STAFFS = [
   },
   {
     id: 10,
-    name: "Nguyễn Văn F",
+    name: "Lê Tiến Hưng",
     doB: "2003-01-01T08:59:00.000Z",
     salaryScale: 1,
     startDate: "2019-04-30T08:59:00.000Z",
@@ -153,7 +153,7 @@ export const STAFFS = [
   },
   {
     id: 11,
-    name: "Nguyễn Văn F",
+    name: "Trần Văn Phúc",
     doB: "2003-01-01T08:59:00.000Z",
     salaryScale: 1,
     startDate: "2019-04-30T08:59:00.000Z",
@@ -164,7 +164,7 @@ export const STAFFS = [
   },
   {
     id: 12,
-    name: "Nguyễn Văn F",
+    name: "Lê Như Nguyệt",
     doB: "2003-01-01T08:59:00.000Z",
     salaryScale: 1,
     startDate: "2019-04-30T08:59:00.000Z",
@@ -175,7 +175,7 @@ export const STAFFS = [
   },
   {
     id: 13,
-    name: "Nguyễn Văn F",
+    name: "Vũ Thị Thảo",
     doB: "2003-01-01T08:59:00.000Z",
     salaryScale: 1,
     startDate: "2019-04-30T08:59:00.000Z",
@@ -186,7 +186,7 @@ export const STAFFS = [
   },
   {
     id: 14,
-    name: "Nguyễn Văn F",
+    name: "Vũ Hoài Nam",
     doB: "2003-01-01T08:59:00.000Z",
     salaryScale: 1,
     startDate: "2019-04-30T08:59:00.000Z",
@@ -197,13 +197,35 @@ export const STAFFS = [
   },
   {
     id: 15,
-    name: "Nguyễn Văn F",
+    name: "Lê Tuấn Tú",
     doB: "2003-01-01T08:59:00.000Z",
     salaryScale: 1,
     startDate: "2019-04-30T08:59:00.000Z",
     department: DEPARTMENTS[4],
     annualLeave: 9,
     overTime: 10,
+    image: "/assets/images/ngoctrinh.png",
+  },
+  {
+    id: 16,
+    name: "Lê Văn Nam",
+    doB: "2003-01-01T08:59:00.000Z",
+    salaryScale: 1,
+    startDate: "2019-04-30T08:59:00.000Z",
+    department: DEPARTMENTS[4],
+    annualLeave: 9,
+    overTime: 9,
+    image: "/assets/images/ngoctrinh.png",
+  },
+  {
+    id: 17,
+    name: "Vũ Văn Tài",
+    doB: "2003-01-01T08:59:00.000Z",
+    salaryScale: 1,
+    startDate: "2019-04-30T08:59:00.000Z",
+    department: DEPARTMENTS[4],
+    annualLeave: 9,
+    overTime: 13,
     image: "/assets/images/ngoctrinh.png",
   },
 ];
