@@ -84,6 +84,12 @@ button {
 .input-group {
   width: 30%;
 }
+
 .form-control {
   border-radius: 5px !important;
+}
+
+.dropdown-item {
+  width: 85% !important;
+  margin-bottom: 5px !important;
 }

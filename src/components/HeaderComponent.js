@@ -34,6 +34,9 @@ class Header extends Component {
 
   onSearch = () => {
     this.props.onSearch(this.state.keyword);
+    this.setState({
+      keyword: "",
+    });
   };
 
   handleChange = (event) => {
@@ -60,7 +63,11 @@ class Header extends Component {
             <Collapse isOpen={this.state.isNavOpen} navbar>
               <Nav navbar>
                 <NavItem>
-                  <NavLink className="nav-link" to="/nhanvien">
+                  <NavLink
+                    className="nav-link"
+                    to="/nhanvien"
+                    onClick={this.onSearch}
+                  >
                     <span className="fa fa-users" aria-hidden="true"></span>{" "}
                     Nhân viên
                   </NavLink>

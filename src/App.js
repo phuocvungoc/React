@@ -20,9 +20,23 @@ class App extends Component {
   }
 
   render() {
-    var { staffs, keyword } = this.props;
+    var { staffs, keyword, sort } = this.props;
     var staff = staffs.filter((staff) => {
       return staff.name.toLowerCase().indexOf(keyword.toLowerCase()) !== -1;
+    });
+
+    var staffSort = staffs.sort((a, b) => {
+      if (
+        Number(Math.round(a.salaryScale * 3000000 + a.overTime * 200000)) >
+        Number(Math.round(b.salaryScale * 3000000 + b.overTime * 200000))
+      )
+        return sort.value;
+      else if (
+        Number(Math.round(a.salaryScale * 3000000 + a.overTime * 200000)) <
+        Number(Math.round(b.salaryScale * 3000000 + b.overTime * 200000))
+      )
+        return -sort.value;
+      else return 0;
     });
 
     const RenderWithId = ({ match }) => {
@@ -63,7 +77,7 @@ class App extends Component {
             <Route
               exact
               path="/bangluong"
-              component={() => <BangLuong staffs={this.state.staffs} />}
+              component={() => <BangLuong staffs={staffSort} />}
             ></Route>
           </Switch>
           <Footer />
@@ -78,6 +92,7 @@ const mapStateToProps = (state) => {
     staffs: state.staffs,
     departments: state.departments,
     keyword: state.keyword,
+    sort: state.sort,
   };
 };
 
