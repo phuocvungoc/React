@@ -37,7 +37,13 @@ class BangLuong extends Component {
   };
 
   render() {
-    const ListBangLuong = this.props.staffs.map((staff) => {
+    if (this.props.keyword === "") {
+      var staffsLuong = this.props.staffSorts;
+    } else {
+      var staffsLuong = this.props.staffs;
+    }
+
+    const ListBangLuong = staffsLuong.map((staff) => {
       return (
         <div className="col-12 col-lg-4 col-md-6 mt-3" key={staff.id}>
           <Card>
@@ -91,10 +97,17 @@ class BangLuong extends Component {
   }
 }
 
+const mapStateToProps = (state) => {
+  return {
+    keyword: state.keyword,
+    sort: state.sort,
+  };
+};
+
 const mapDispatchToProps = (dispatch, props) => {
   return {
     onSort: (sort) => dispatch({ type: "SORT", payload: sort }),
   };
 };
 
-export default connect(null, mapDispatchToProps)(BangLuong);
+export default connect(mapStateToProps, mapDispatchToProps)(BangLuong);

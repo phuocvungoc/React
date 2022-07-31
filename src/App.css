@@ -72,13 +72,6 @@ a {
 button {
   background-color: var(--background-color) !important;
   margin-left: 10px !important;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
 }
 
 .input-group {

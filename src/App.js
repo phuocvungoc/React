@@ -77,7 +77,9 @@ class App extends Component {
             <Route
               exact
               path="/bangluong"
-              component={() => <BangLuong staffs={staffSort} />}
+              component={() => (
+                <BangLuong staffs={staff} staffSorts={staffSort} />
+              )}
             ></Route>
           </Switch>
           <Footer />
