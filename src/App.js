@@ -20,11 +20,13 @@ class App extends Component {
   }
 
   render() {
+    // Chức năng search
     var { staffs, keyword, sort } = this.props;
     var staff = staffs.filter((staff) => {
       return staff.name.toLowerCase().indexOf(keyword.toLowerCase()) !== -1;
     });
 
+    // Chức năng sắp xếp
     var staffSort = staffs.sort((a, b) => {
       if (
         Number(Math.round(a.salaryScale * 3000000 + a.overTime * 200000)) >
@@ -39,6 +41,7 @@ class App extends Component {
       else return 0;
     });
 
+    // Hiển thị chi tiết nhân viên
     const RenderWithId = ({ match }) => {
       return (
         <RenderStaff
@@ -89,6 +92,7 @@ class App extends Component {
   }
 }
 
+// Lấy giá trị từ Redux thành props
 const mapStateToProps = (state) => {
   return {
     staffs: state.staffs,

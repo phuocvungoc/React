@@ -2,12 +2,13 @@ import React from "react";
 import { Card, CardImg, CardText, CardBody } from "reactstrap";
 import { Link } from "react-router-dom";
 
+// Hàm hiển thị danh sách nhân viên
 function RenderListStaff({ staff }) {
   return (
     <Card>
       <CardBody className="border border-success rounded">
         <Link to={`/nhanvien/${staff.id}`}>
-          <CardImg className="rounded" src={staff.image} alt={staff.name} />
+          <CardImg src={staff.image} alt={staff.name} />
         </Link>
         <CardText className="text-center mt-4">{staff.name}</CardText>
       </CardBody>
@@ -15,6 +16,7 @@ function RenderListStaff({ staff }) {
   );
 }
 
+// Hiển thị danh sách nhân viên
 const StaffList = (props) => {
   const staffList = props.staffs.map((staff) => {
     return (

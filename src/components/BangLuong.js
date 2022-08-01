@@ -12,6 +12,7 @@ import {
   Dropdown,
 } from "reactstrap";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 
 class BangLuong extends Component {
   constructor(props) {
@@ -37,12 +38,14 @@ class BangLuong extends Component {
   };
 
   render() {
+    // Biến staffsLuong nhận giá trị theo tương tác của người dùng
     if (this.props.keyword === "") {
       var staffsLuong = this.props.staffSorts;
     } else {
       var staffsLuong = this.props.staffs;
     }
 
+    // Hiển thị danh sách lương nhân viên theo biến staffsLuong nhận đc
     const ListBangLuong = staffsLuong.map((staff) => {
       return (
         <div className="col-12 col-lg-4 col-md-6 mt-3" key={staff.id}>
@@ -68,8 +71,12 @@ class BangLuong extends Component {
       <div className="container">
         <div className="row mt-3">
           <div className="col-lg-10 col-md-8 col-sm-8">
-            <Button>Nhân viên</Button>
-            <Button className="ml-3">Bảng Lương</Button>
+            <Button>
+              <Link to="/nhanvien">Nhân viên</Link>
+            </Button>
+            <Button className="ml-3">
+              <Link to="/bangluong">Bảng lương</Link>
+            </Button>
           </div>
           <div className="col-lg-2 col-md-2 col-sm-2">
             <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
@@ -97,6 +104,7 @@ class BangLuong extends Component {
   }
 }
 
+// Lấy giá trị từ Redux
 const mapStateToProps = (state) => {
   return {
     keyword: state.keyword,
@@ -104,6 +112,7 @@ const mapStateToProps = (state) => {
   };
 };
 
+// Dispatch dữ liệu người dùng muốn sắp xếp vào Redux để xử lí
 const mapDispatchToProps = (dispatch, props) => {
   return {
     onSort: (sort) => dispatch({ type: "SORT", payload: sort }),

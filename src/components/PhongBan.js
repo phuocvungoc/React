@@ -1,6 +1,7 @@
 import React from "react";
 import { Card, CardTitle, CardBody, CardText } from "reactstrap";
 
+// Hàm hiển thị phòng ban
 function RenderPB({ department }) {
   return (
     <Card>
@@ -12,6 +13,7 @@ function RenderPB({ department }) {
   );
 }
 
+// Hiển thị phòng ban
 const PhongBan = (props) => {
   const phongBanList = props.departments.map((department) => {
     return (

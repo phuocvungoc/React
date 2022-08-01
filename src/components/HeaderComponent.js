@@ -55,9 +55,9 @@ class Header extends Component {
               <img
                 className="rounded-circle"
                 src="assets/images/logo2.png"
-                height="30"
-                width="41"
-                alt="Ristorante Con Fusion"
+                height="40"
+                width="40"
+                alt="Phước"
               />
             </NavbarBrand>
             <Collapse isOpen={this.state.isNavOpen} navbar>
@@ -103,6 +103,7 @@ class Header extends Component {
   }
 }
 
+// Dispatch vào Redux để xử lí dữ liệu người dùng nhập search
 const mapDispatchToProps = (dispatch, props) => {
   return {
     onSearch: (keyword) => dispatch({ type: "ADD_INPUT", payload: keyword }),
