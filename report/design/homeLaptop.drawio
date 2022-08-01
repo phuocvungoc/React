@@ -1,0 +1,79 @@
+<mxfile host="65bd71144e">
+    <diagram id="Cc_H5cV1eeao8LMk62GX" name="Page-1">
+        <mxGraphModel dx="1560" dy="1150" grid="1" gridSize="30" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="61" value="" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=#66FFFF;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;" parent="1" vertex="1">
+                    <mxGeometry width="850" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="62" value="Footer" style="rounded=1;whiteSpace=wrap;html=1;fontSize=30;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;" parent="1" vertex="1">
+                    <mxGeometry y="920" width="850" height="180" as="geometry"/>
+                </mxCell>
+                <mxCell id="180" value="Logo" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=18;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;" parent="1" vertex="1">
+                    <mxGeometry x="90" width="60" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="181" value="Nhân viên" style="rounded=1;whiteSpace=wrap;html=1;fontSize=18;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;" parent="1" vertex="1">
+                    <mxGeometry x="150" width="90" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="184" value="" style="edgeStyle=none;html=1;fontSize=25;" parent="1" source="182" target="181" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="182" value="Phòng ban" style="rounded=1;whiteSpace=wrap;html=1;fontSize=18;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;" parent="1" vertex="1">
+                    <mxGeometry x="240" width="90" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="183" value="Bảng lương" style="rounded=1;whiteSpace=wrap;html=1;fontSize=17;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;" parent="1" vertex="1">
+                    <mxGeometry x="330" width="95" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="185" value="Search..." style="rounded=1;whiteSpace=wrap;html=1;fontSize=17;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" parent="1" vertex="1">
+                    <mxGeometry x="600" width="180" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="209" value="Tên nhân viên:&lt;br style=&quot;font-size: 19px;&quot;&gt;Mã nhân viên:&lt;br style=&quot;font-size: 19px;&quot;&gt;Hệ số lương:&amp;nbsp;&lt;br style=&quot;font-size: 19px;&quot;&gt;Ngày tăng ca:&lt;br style=&quot;font-size: 19px;&quot;&gt;Lương:&amp;nbsp;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=19;" vertex="1" parent="1">
+                    <mxGeometry x="60" y="180" width="210" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="210" value="Nhân viên" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="1">
+                    <mxGeometry x="60" y="90" width="90" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="211" value="Bảng lương" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="1">
+                    <mxGeometry x="180" y="90" width="90" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="221" value="Sắp xếp" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="1">
+                    <mxGeometry x="660" y="90" width="90" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="222" value="Tên nhân viên:&lt;br style=&quot;font-size: 19px;&quot;&gt;Mã nhân viên:&lt;br style=&quot;font-size: 19px;&quot;&gt;Hệ số lương:&amp;nbsp;&lt;br style=&quot;font-size: 19px;&quot;&gt;Ngày tăng ca:&lt;br style=&quot;font-size: 19px;&quot;&gt;Lương:&amp;nbsp;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=19;" vertex="1" parent="1">
+                    <mxGeometry x="330" y="180" width="210" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="223" value="Tên nhân viên:&lt;br style=&quot;font-size: 19px;&quot;&gt;Mã nhân viên:&lt;br style=&quot;font-size: 19px;&quot;&gt;Hệ số lương:&amp;nbsp;&lt;br style=&quot;font-size: 19px;&quot;&gt;Ngày tăng ca:&lt;br style=&quot;font-size: 19px;&quot;&gt;Lương:&amp;nbsp;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=19;" vertex="1" parent="1">
+                    <mxGeometry x="600" y="180" width="210" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="224" value="Tên nhân viên:&lt;br style=&quot;font-size: 19px;&quot;&gt;Mã nhân viên:&lt;br style=&quot;font-size: 19px;&quot;&gt;Hệ số lương:&amp;nbsp;&lt;br style=&quot;font-size: 19px;&quot;&gt;Ngày tăng ca:&lt;br style=&quot;font-size: 19px;&quot;&gt;Lương:&amp;nbsp;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=19;" vertex="1" parent="1">
+                    <mxGeometry x="60" y="360" width="210" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="225" value="Tên nhân viên:&lt;br style=&quot;font-size: 19px;&quot;&gt;Mã nhân viên:&lt;br style=&quot;font-size: 19px;&quot;&gt;Hệ số lương:&amp;nbsp;&lt;br style=&quot;font-size: 19px;&quot;&gt;Ngày tăng ca:&lt;br style=&quot;font-size: 19px;&quot;&gt;Lương:&amp;nbsp;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=19;" vertex="1" parent="1">
+                    <mxGeometry x="330" y="360" width="210" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="226" value="Tên nhân viên:&lt;br style=&quot;font-size: 19px;&quot;&gt;Mã nhân viên:&lt;br style=&quot;font-size: 19px;&quot;&gt;Hệ số lương:&amp;nbsp;&lt;br style=&quot;font-size: 19px;&quot;&gt;Ngày tăng ca:&lt;br style=&quot;font-size: 19px;&quot;&gt;Lương:&amp;nbsp;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=19;" vertex="1" parent="1">
+                    <mxGeometry x="600" y="360" width="210" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="227" value="Tên nhân viên:&lt;br style=&quot;font-size: 19px;&quot;&gt;Mã nhân viên:&lt;br style=&quot;font-size: 19px;&quot;&gt;Hệ số lương:&amp;nbsp;&lt;br style=&quot;font-size: 19px;&quot;&gt;Ngày tăng ca:&lt;br style=&quot;font-size: 19px;&quot;&gt;Lương:&amp;nbsp;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=19;" vertex="1" parent="1">
+                    <mxGeometry x="50" y="540" width="210" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="228" value="Tên nhân viên:&lt;br style=&quot;font-size: 19px;&quot;&gt;Mã nhân viên:&lt;br style=&quot;font-size: 19px;&quot;&gt;Hệ số lương:&amp;nbsp;&lt;br style=&quot;font-size: 19px;&quot;&gt;Ngày tăng ca:&lt;br style=&quot;font-size: 19px;&quot;&gt;Lương:&amp;nbsp;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=19;" vertex="1" parent="1">
+                    <mxGeometry x="320" y="540" width="210" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="229" value="Tên nhân viên:&lt;br style=&quot;font-size: 19px;&quot;&gt;Mã nhân viên:&lt;br style=&quot;font-size: 19px;&quot;&gt;Hệ số lương:&amp;nbsp;&lt;br style=&quot;font-size: 19px;&quot;&gt;Ngày tăng ca:&lt;br style=&quot;font-size: 19px;&quot;&gt;Lương:&amp;nbsp;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=19;" vertex="1" parent="1">
+                    <mxGeometry x="590" y="540" width="210" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="230" value="Tên nhân viên:&lt;br style=&quot;font-size: 19px;&quot;&gt;Mã nhân viên:&lt;br style=&quot;font-size: 19px;&quot;&gt;Hệ số lương:&amp;nbsp;&lt;br style=&quot;font-size: 19px;&quot;&gt;Ngày tăng ca:&lt;br style=&quot;font-size: 19px;&quot;&gt;Lương:&amp;nbsp;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=19;" vertex="1" parent="1">
+                    <mxGeometry x="50" y="720" width="210" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="231" value="Tên nhân viên:&lt;br style=&quot;font-size: 19px;&quot;&gt;Mã nhân viên:&lt;br style=&quot;font-size: 19px;&quot;&gt;Hệ số lương:&amp;nbsp;&lt;br style=&quot;font-size: 19px;&quot;&gt;Ngày tăng ca:&lt;br style=&quot;font-size: 19px;&quot;&gt;Lương:&amp;nbsp;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=19;" vertex="1" parent="1">
+                    <mxGeometry x="320" y="720" width="210" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="232" value="Tên nhân viên:&lt;br style=&quot;font-size: 19px;&quot;&gt;Mã nhân viên:&lt;br style=&quot;font-size: 19px;&quot;&gt;Hệ số lương:&amp;nbsp;&lt;br style=&quot;font-size: 19px;&quot;&gt;Ngày tăng ca:&lt;br style=&quot;font-size: 19px;&quot;&gt;Lương:&amp;nbsp;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=19;" vertex="1" parent="1">
+                    <mxGeometry x="590" y="720" width="210" height="120" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
