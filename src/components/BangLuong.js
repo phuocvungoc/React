@@ -70,15 +70,15 @@ class BangLuong extends Component {
     return (
       <div className="container">
         <div className="row mt-3">
-          <div className="col-lg-10 col-md-8 col-sm-8">
-            <Button>
+          <div className="col-6 col-lg-10 col-md-8 col-sm-8">
+            <Button className="hidden">
               <Link to="/nhanvien">Nhân viên</Link>
             </Button>
             <Button className="ml-3">
               <Link to="/bangluong">Bảng lương</Link>
             </Button>
           </div>
-          <div className="col-lg-2 col-md-2 col-sm-2">
+          <div className="col-2 col-lg-2 col-md-2 col-sm-2">
             <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
               <DropdownToggle caret>Sắp xếp lương</DropdownToggle>
               <DropdownMenu right>

@@ -20,7 +20,7 @@ function RenderListStaff({ staff }) {
 const StaffList = (props) => {
   const staffList = props.staffs.map((staff) => {
     return (
-      <div className="col-12 col-sm-6 col-md-4 col-lg-2 mt-3" key={staff.id}>
+      <div className="col-6 col-md-4 col-lg-2 mt-3" key={staff.id}>
         <RenderListStaff staff={staff} />
       </div>
     );

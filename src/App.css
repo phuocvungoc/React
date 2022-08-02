@@ -67,6 +67,9 @@ a {
   .hidden {
     display: none !important;
   }
+  .input-group {
+    width: 50% !important;
+  }
 }
 
 button {
