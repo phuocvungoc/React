@@ -18,11 +18,10 @@ class Header extends Component {
     super(props);
 
     this.toggleNav = this.toggleNav.bind(this);
-    this.onSearch = this.onSearch.bind(this);
+    this.handleSubmitClick = this.handleSubmitClick.bind(this);
 
     this.state = {
       isNavOpen: false,
-      keyword: "",
     };
   }
 
@@ -32,17 +31,9 @@ class Header extends Component {
     });
   }
 
-  onSearch = () => {
-    this.props.onSearch(this.state.keyword);
-    this.setState({
-      keyword: "",
-    });
-  };
-
-  handleChange = (event) => {
-    this.setState({
-      keyword: event.target.value,
-    });
+  handleSubmitClick = () => {
+    this.props.onSearch(this.search.value);
+    this.search.value = "";
   };
 
   render() {
@@ -66,7 +57,7 @@ class Header extends Component {
                   <NavLink
                     className="nav-link"
                     to="/nhanvien"
-                    onClick={this.onSearch}
+                    onClick={this.handleSubmitClick}
                   >
                     <span className="fa fa-users" aria-hidden="true"></span>{" "}
                     Nhân viên
@@ -89,10 +80,12 @@ class Header extends Component {
             <InputGroup>
               <Input
                 placeholder="Search..."
-                value={this.state.keyword}
-                onChange={(event) => this.handleChange(event)}
+                innerRef={(input) => (this.search = input)}
               />
-              <Button className="btn btn-primary" onClick={this.onSearch}>
+              <Button
+                className="btn btn-primary"
+                onClick={this.handleSubmitClick}
+              >
                 <i className="fa fa-search" aria-hidden="true"></i>
               </Button>
             </InputGroup>
