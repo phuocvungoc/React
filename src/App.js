@@ -16,7 +16,16 @@ class App extends Component {
     this.state = {
       staffs: STAFFS,
       departments: DEPARTMENTS,
+      addStaff: "",
     };
+    this.handleAddStaff = this.handleAddStaff.bind(this);
+  }
+
+  handleAddStaff(addStaff, staff = this.state.staffs) {
+    this.setState({
+      addStaff: addStaff,
+      staffs: [...staff, addStaff],
+    });
   }
 
   render() {
@@ -62,12 +71,22 @@ class App extends Component {
             <Route
               exact
               path="/"
-              component={() => <StaffList staffs={staff} />}
+              component={() => (
+                <StaffList
+                  staffs={this.state.staffs}
+                  onStaffChange={this.handleAddStaff}
+                />
+              )}
             ></Route>
             <Route
               exact
               path="/nhanvien"
-              component={() => <StaffList staffs={staff} />}
+              component={() => (
+                <StaffList
+                  staffs={this.state.staffs}
+                  onStaffChange={this.handleAddStaff}
+                />
+              )}
             ></Route>
             <Route exact path="/nhanvien/:id" component={RenderWithId}></Route>
             <Route
