@@ -61,7 +61,18 @@ class StaffList extends Component {
   }
 
   handleSubmit(event) {
-    this.props.onStaffChange(this.state);
+    var checkForm =
+      this.state.touched.name &&
+      this.state.touched.doB &&
+      this.state.touched.salaryScale &&
+      this.state.touched.startDate &&
+      this.state.touched.annualLeave &&
+      this.state.touched.overTime;
+    if (checkForm) {
+      this.props.onStaffChange(this.state);
+    } else {
+      alert("Dữ liệu không đầy đủ, vui lòng nhập lại");
+    }
   }
 
   handleBlur = (field) => (evt) => {
@@ -160,6 +171,7 @@ class StaffList extends Component {
                   type="date"
                   id="doB"
                   name="doB"
+                  max="2022-08-06"
                   value={this.state.doB}
                   onChange={this.handleInputChange}
                   valid={errors.doB === ""}

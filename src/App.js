@@ -14,23 +14,29 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      staffs: STAFFS,
+      staffs: JSON.parse(localStorage.getItem("staffs"))
+        ? JSON.parse(localStorage.getItem("staffs"))
+        : STAFFS,
       departments: DEPARTMENTS,
-      addStaff: "",
     };
     this.handleAddStaff = this.handleAddStaff.bind(this);
   }
 
-  handleAddStaff(addStaff, staff = this.state.staffs) {
+  handleAddStaff(addStaff, staff = JSON.parse(localStorage.getItem("staffs"))) {
+    const id = staff.length;
+    const newStaff = { id, ...addStaff };
     this.setState({
-      addStaff: addStaff,
-      staffs: [...staff, addStaff],
+      staffs: [...staff, newStaff],
     });
+    localStorage.setItem("staffs", JSON.stringify([...staff, newStaff]));
   }
 
   render() {
     // Chức năng search
-    var { staffs, keyword, sort } = this.props;
+    var staffs = JSON.parse(localStorage.getItem("staffs"))
+      ? JSON.parse(localStorage.getItem("staffs"))
+      : STAFFS;
+    var { keyword, sort } = this.props;
     var staff = staffs.filter((staff) => {
       return staff.name.toLowerCase().indexOf(keyword.toLowerCase()) !== -1;
     });
@@ -72,20 +78,14 @@ class App extends Component {
               exact
               path="/"
               component={() => (
-                <StaffList
-                  staffs={this.state.staffs}
-                  onStaffChange={this.handleAddStaff}
-                />
+                <StaffList staffs={staff} onStaffChange={this.handleAddStaff} />
               )}
             ></Route>
             <Route
               exact
               path="/nhanvien"
               component={() => (
-                <StaffList
-                  staffs={this.state.staffs}
-                  onStaffChange={this.handleAddStaff}
-                />
+                <StaffList staffs={staff} onStaffChange={this.handleAddStaff} />
               )}
             ></Route>
             <Route exact path="/nhanvien/:id" component={RenderWithId}></Route>
