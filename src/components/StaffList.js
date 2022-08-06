@@ -52,6 +52,7 @@ class StaffList extends Component {
 
   handleInputChange(event) {
     const target = event.target;
+    console.log(target);
     const value = target.type === "checkbox" ? target.checked : target.value;
     const name = target.name;
 
@@ -61,6 +62,16 @@ class StaffList extends Component {
   }
 
   handleSubmit(event) {
+    var dataStaff = {
+      name: this.state.name,
+      doB: this.state.doB,
+      salaryScale: this.state.salaryScale,
+      startDate: this.state.startDate,
+      department: this.state.department,
+      annualLeave: this.state.annualLeave,
+      overTime: this.state.overTime,
+      image: "/assets/images/ngoctrinh.png",
+    };
     var checkForm =
       this.state.touched.name &&
       this.state.touched.doB &&
@@ -69,7 +80,7 @@ class StaffList extends Component {
       this.state.touched.annualLeave &&
       this.state.touched.overTime;
     if (checkForm) {
-      this.props.onStaffChange(this.state);
+      this.props.onStaffChange(dataStaff);
     } else {
       alert("Dữ liệu không đầy đủ, vui lòng nhập lại");
     }
@@ -208,7 +219,6 @@ class StaffList extends Component {
                   name="department"
                   value={this.state.department}
                   onChange={this.handleInputChange}
-                  valid={errors.department !== ""}
                   onBlur={this.handleBlur("department")}
                 >
                   <option>Sale</option>

@@ -42,7 +42,7 @@ class BangLuong extends Component {
     if (this.props.keyword === "") {
       var staffsLuong = this.props.staffSorts;
     } else {
-      var staffsLuong = this.props.staffs;
+      staffsLuong = this.props.staffs;
     }
 
     // Hiển thị danh sách lương nhân viên theo biến staffsLuong nhận đc

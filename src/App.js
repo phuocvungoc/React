@@ -2,41 +2,28 @@ import React, { Component } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { connect } from "react-redux";
 import "./App.css";
-import StaffList from "./components/StaffListComponent";
-import { STAFFS, DEPARTMENTS } from "./shared/staffs";
-import Header from "./components/HeaderComponent";
-import Footer from "./components/FooterComponent";
+import StaffList from "./components/StaffList";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 import PhongBan from "./components/PhongBan";
 import BangLuong from "./components/BangLuong";
-import RenderStaff from "./components/RenderStaffComponent";
+import RenderStaff from "./components/RenderStaff";
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      staffs: JSON.parse(localStorage.getItem("staffs"))
-        ? JSON.parse(localStorage.getItem("staffs"))
-        : STAFFS,
-      departments: DEPARTMENTS,
-    };
     this.handleAddStaff = this.handleAddStaff.bind(this);
   }
 
-  handleAddStaff(addStaff, staff = JSON.parse(localStorage.getItem("staffs"))) {
-    const id = staff.length;
+  handleAddStaff(addStaff) {
+    const id = this.props.staffs.length;
     const newStaff = { id, ...addStaff };
-    this.setState({
-      staffs: [...staff, newStaff],
-    });
-    localStorage.setItem("staffs", JSON.stringify([...staff, newStaff]));
+    this.props.addStaff(newStaff);
   }
 
   render() {
     // Chức năng search
-    var staffs = JSON.parse(localStorage.getItem("staffs"))
-      ? JSON.parse(localStorage.getItem("staffs"))
-      : STAFFS;
-    var { keyword, sort } = this.props;
+    var { staffs, keyword, sort, departments } = this.props;
     var staff = staffs.filter((staff) => {
       return staff.name.toLowerCase().indexOf(keyword.toLowerCase()) !== -1;
     });
@@ -61,7 +48,7 @@ class App extends Component {
       return (
         <RenderStaff
           staff={
-            this.state.staffs.filter(
+            staffs.filter(
               (staff) => staff.id === parseInt(match.params.id, 10)
             )[0]
           }
@@ -92,9 +79,7 @@ class App extends Component {
             <Route
               exact
               path="/phongban"
-              component={() => (
-                <PhongBan departments={this.state.departments} />
-              )}
+              component={() => <PhongBan departments={departments} />}
             ></Route>
             <Route
               exact
@@ -121,4 +106,10 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(App);
+const mapDispatchToProps = (dispatch, props) => {
+  return {
+    addStaff: (newStaff) => dispatch({ type: "ADD_STAFF", payload: newStaff }),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
