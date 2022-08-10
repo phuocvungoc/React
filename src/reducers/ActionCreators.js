@@ -172,3 +172,38 @@ export const salarySuccess = (salary) => ({
   type: ActionTypes.SALARY,
   payload: salary,
 });
+
+export const deleteStaffSuccess = (staffs) => ({
+  type: ActionTypes.DELETE_STAFF,
+  payload: staffs,
+});
+
+export const deleteStaff = (id) => (dispatch) => {
+  if (window.confirm("Are you sure you want to delete this staff?")) {
+    return fetch(baseUrl + `staffs/${id}`, {
+      method: "DELETE",
+    })
+      .then(
+        (response) => {
+          if (response.ok) {
+            return response;
+          } else {
+            var error = new Error(
+              "Error " + response.status + ": " + response.statusText
+            );
+            error.response = response;
+            throw error;
+          }
+        },
+        (error) => {
+          throw error;
+        }
+      )
+      .then((response) => response.json())
+      .then((response) => dispatch(deleteStaffSuccess(response)))
+      .catch((error) => {
+        console.log("delete staff", error.message);
+        alert("staff could not be deleted\nError: " + error.message);
+      });
+  } else return;
+};

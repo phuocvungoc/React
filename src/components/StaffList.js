@@ -14,6 +14,8 @@ import {
 import { Control, LocalForm, Errors } from "react-redux-form";
 import { Link } from "react-router-dom";
 import { Loading } from "./Loading";
+import { deleteStaff } from "../reducers/ActionCreators";
+import { connect } from "react-redux";
 
 const required = (val) => val && val.length;
 const maxLength = (len) => (val) => !val || val.length <= len;
@@ -29,6 +31,7 @@ class StaffList extends Component {
     };
     this.toggleModal = this.toggleModal.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.deleteStaff = this.deleteStaff.bind(this);
   }
 
   toggleModal() {
@@ -53,12 +56,21 @@ class StaffList extends Component {
     this.props.onStaffChange(dataStaff);
   };
 
+  deleteStaff(id) {
+    this.props.deleteStaff(id);
+  }
+
   render() {
     const staffList = this.state.staffs.staffs.map((staff) => {
       return (
         <div className="col-6 col-md-4 col-lg-2 mt-3" key={staff.id}>
-          <Card>
-            <CardBody className="border border-success rounded">
+          <Card className="border border-success rounded">
+            <Button
+              className="fa fa-trash ml-0"
+              aria-hidden="true"
+              onClick={() => this.deleteStaff(staff.id)}
+            />
+            <CardBody className="p-0">
               <Link to={`/nhanvien/${staff.id}`}>
                 <CardImg src={staff.image} alt={staff.name} />
               </Link>
@@ -288,4 +300,10 @@ class StaffList extends Component {
   }
 }
 
-export default StaffList;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    deleteStaff: (id) => dispatch(deleteStaff(id)),
+  };
+};
+
+export default connect(null, mapDispatchToProps)(StaffList);

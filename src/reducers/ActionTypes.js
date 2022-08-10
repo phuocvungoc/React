@@ -12,3 +12,5 @@ export const SALARY_FAILED = "SALARY_FAILED";
 export const SALARY = "SALARY";
 
 export const SEARCH = "SEARCH";
+
+export const DELETE_STAFF = "DELETE_STAFF";
