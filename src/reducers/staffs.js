@@ -5,6 +5,10 @@ export const Staffs = (
   action
 ) => {
   switch (action.type) {
+    case ActionTypes.ADD_STAFF:
+      const staffs = action.payload;
+      return { ...state, staffs };
+
     case ActionTypes.STAFFS:
       return {
         ...state,

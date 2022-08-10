@@ -8,11 +8,23 @@ import Footer from "./components/Footer";
 import PhongBan from "./components/PhongBan";
 import BangLuong from "./components/BangLuong";
 import RenderStaff from "./components/RenderStaff";
-import { fetchStaffs, fetchDept, fetchSalary } from "./reducers/ActionCreators";
+import {
+  fetchStaffs,
+  fetchDept,
+  fetchSalary,
+  postStaff,
+} from "./reducers/ActionCreators";
 
 class App extends Component {
   constructor(props) {
     super(props);
+    this.handleAddStaff = this.handleAddStaff.bind(this);
+  }
+
+  handleAddStaff(staff) {
+    const id = this.props.staffs.staffs.length;
+    const newStaff = { id, ...staff };
+    this.props.postStaff(newStaff);
   }
 
   componentDidMount() {
@@ -112,6 +124,7 @@ const mapDispatchToProps = (dispatch) => {
     fetchStaffs: () => dispatch(fetchStaffs()),
     fetchDept: () => dispatch(fetchDept()),
     fetchSalary: () => dispatch(fetchSalary()),
+    postStaff: (newStaff) => dispatch(postStaff(newStaff)),
   };
 };
 
