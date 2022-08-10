@@ -99,7 +99,7 @@ class Header extends Component {
 // Dispatch vào Redux để xử lí dữ liệu người dùng nhập search
 const mapDispatchToProps = (dispatch, props) => {
   return {
-    onSearch: (keyword) => dispatch({ type: "ADD_INPUT", payload: keyword }),
+    onSearch: (keyword) => dispatch({ type: "SEARCH", payload: keyword }),
   };
 };
 

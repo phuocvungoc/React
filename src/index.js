@@ -4,19 +4,15 @@ import "bootstrap/dist/css/bootstrap.css";
 import "font-awesome/css/font-awesome.css";
 import "bootstrap-social/bootstrap-social.css";
 import { Provider } from "react-redux";
-import { createStore } from "redux";
-import rootReducer from "./reducers/rootReducer";
+import { Store } from "./reducers/configureStore";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
-const reduxStore = createStore(
-  rootReducer,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-);
+const store = Store();
 
 ReactDOM.render(
-  <Provider store={reduxStore}>
+  <Provider store={store}>
     <App />
   </Provider>,
 

@@ -8,39 +8,24 @@ import Footer from "./components/Footer";
 import PhongBan from "./components/PhongBan";
 import BangLuong from "./components/BangLuong";
 import RenderStaff from "./components/RenderStaff";
+import { fetchStaffs, fetchDept, fetchSalary } from "./reducers/ActionCreators";
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.handleAddStaff = this.handleAddStaff.bind(this);
   }
 
-  handleAddStaff(addStaff) {
-    const id = this.props.staffs.length;
-    const newStaff = { id, ...addStaff };
-    this.props.addStaff(newStaff);
+  componentDidMount() {
+    this.props.fetchStaffs();
+    this.props.fetchDept();
+    this.props.fetchSalary();
   }
 
   render() {
     // Chức năng search
-    var { staffs, keyword, sort, departments } = this.props;
-    var staff = staffs.filter((staff) => {
+    var { keyword } = this.props.keyword;
+    var staff = this.props.staffs.staffs.filter((staff) => {
       return staff.name.toLowerCase().indexOf(keyword.toLowerCase()) !== -1;
-    });
-
-    // Chức năng sắp xếp
-    var staffSort = staffs.sort((a, b) => {
-      if (
-        Number(Math.round(a.salaryScale * 3000000 + a.overTime * 200000)) >
-        Number(Math.round(b.salaryScale * 3000000 + b.overTime * 200000))
-      )
-        return sort.value;
-      else if (
-        Number(Math.round(a.salaryScale * 3000000 + a.overTime * 200000)) <
-        Number(Math.round(b.salaryScale * 3000000 + b.overTime * 200000))
-      )
-        return -sort.value;
-      else return 0;
     });
 
     // Hiển thị chi tiết nhân viên
@@ -48,10 +33,11 @@ class App extends Component {
       return (
         <RenderStaff
           staff={
-            staffs.filter(
+            this.props.staffs.staffs.filter(
               (staff) => staff.id === parseInt(match.params.id, 10)
             )[0]
           }
+          dept={this.props.dept.dept}
         />
       );
     };
@@ -65,27 +51,43 @@ class App extends Component {
               exact
               path="/"
               component={() => (
-                <StaffList staffs={staff} onStaffChange={this.handleAddStaff} />
+                <StaffList
+                  staffs={
+                    this.props.keyword.keyword.length > 0
+                      ? staff
+                      : this.props.staffs
+                  }
+                  dept={this.props.dept.dept}
+                  onStaffChange={this.handleAddStaff}
+                />
               )}
             ></Route>
             <Route
               exact
               path="/nhanvien"
               component={() => (
-                <StaffList staffs={staff} onStaffChange={this.handleAddStaff} />
+                <StaffList
+                  staffs={
+                    this.props.keyword.keyword.length > 0
+                      ? staff
+                      : this.props.staffs
+                  }
+                  dept={this.props.dept.dept}
+                  onStaffChange={this.handleAddStaff}
+                />
               )}
             ></Route>
             <Route exact path="/nhanvien/:id" component={RenderWithId}></Route>
             <Route
               exact
               path="/phongban"
-              component={() => <PhongBan departments={departments} />}
+              component={() => <PhongBan dept={this.props.dept} />}
             ></Route>
             <Route
               exact
               path="/bangluong"
               component={() => (
-                <BangLuong staffs={staff} staffSorts={staffSort} />
+                <BangLuong salary={this.props.salary} staffs={staff} />
               )}
             ></Route>
           </Switch>
@@ -96,19 +98,20 @@ class App extends Component {
   }
 }
 
-// Lấy giá trị từ Redux thành props
 const mapStateToProps = (state) => {
   return {
     staffs: state.staffs,
-    departments: state.departments,
+    dept: state.dept,
+    salary: state.salary,
     keyword: state.keyword,
-    sort: state.sort,
   };
 };
 
-const mapDispatchToProps = (dispatch, props) => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    addStaff: (newStaff) => dispatch({ type: "ADD_STAFF", payload: newStaff }),
+    fetchStaffs: () => dispatch(fetchStaffs()),
+    fetchDept: () => dispatch(fetchDept()),
+    fetchSalary: () => dispatch(fetchSalary()),
   };
 };
 

@@ -23,7 +23,7 @@ function RenderImg({ staff }) {
 }
 
 // Hàm hiển thị thông tin chi tiết nhân viên
-function RenderDetails({ staff }) {
+function RenderDetails({ staff, dept }) {
   return (
     <div className="col-12 col-lg-9 col-md-8 col-sm-12">
       <CardBody>
@@ -32,7 +32,9 @@ function RenderDetails({ staff }) {
         <CardText>
           Ngày vào công ty: {dateFormat(staff.startDate, "dd/mm/yyyy")}
         </CardText>
-        <CardText>Phòng ban: {staff.department.name}</CardText>
+        <CardText>
+          Phòng ban: {dept.find((dept) => dept.id === staff.departmentId).name}
+        </CardText>
         <CardText>Số ngày nghỉ còn lại: {staff.annualLeave}</CardText>
         <CardText>Số ngày đã làm thêm: {staff.overTime}</CardText>
       </CardBody>
@@ -54,7 +56,7 @@ const RenderStaff = (props) => {
         <div className="container">
           <div className="row border border-success rounded mt-3">
             <RenderImg staff={props.staff} />
-            <RenderDetails staff={props.staff} />
+            <RenderDetails staff={props.staff} dept={props.dept} />
           </div>
         </div>
       </div>
