@@ -14,6 +14,7 @@ import {
   fetchSalary,
   postStaff,
 } from "./reducers/ActionCreators";
+import DepartmentDetail from "./components/DepartmentDetail";
 
 class App extends Component {
   constructor(props) {
@@ -50,6 +51,22 @@ class App extends Component {
             )[0]
           }
           dept={this.props.dept.dept}
+        />
+      );
+    };
+
+    // Hiển thị nhân viên theo phòng ban
+    const RenderWithDept = ({ match }) => {
+      const deptId = this.props.dept.dept.find(
+        (dept) => dept.name === match.params.deptname
+      );
+      console.log(deptId);
+
+      return (
+        <DepartmentDetail
+          staff={this.props.staffs.staffs.filter(
+            (staff) => staff.departmentId === deptId.id
+          )}
         />
       );
     };
@@ -94,6 +111,11 @@ class App extends Component {
               exact
               path="/phongban"
               component={() => <PhongBan dept={this.props.dept} />}
+            ></Route>
+            <Route
+              exact
+              path="/phongban/:deptname"
+              component={RenderWithDept}
             ></Route>
             <Route
               exact

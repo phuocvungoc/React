@@ -1,6 +1,7 @@
 import React from "react";
 import { Card, CardTitle, CardBody, CardText } from "reactstrap";
 import { Loading } from "./Loading";
+import { Link } from "react-router-dom";
 
 // Hàm hiển thị phòng ban
 function RenderPB({ department }) {
@@ -36,7 +37,9 @@ const PhongBan = (props) => {
     const phongBanList = props.dept.dept.map((department) => {
       return (
         <div className="col-12 col-lg-4 col-md-6 mt-3" key={department.id}>
-          <RenderPB department={department} />
+          <Link className="css-link-dept" to={`/phongban/${department.name}`}>
+            <RenderPB department={department} />
+          </Link>
         </div>
       );
     });
