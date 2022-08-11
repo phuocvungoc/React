@@ -14,3 +14,4 @@ export const SALARY = "SALARY";
 export const SEARCH = "SEARCH";
 
 export const DELETE_STAFF = "DELETE_STAFF";
+export const UPDATE_STAFF = "UPDATE_STAFF";
