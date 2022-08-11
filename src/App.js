@@ -57,18 +57,8 @@ class App extends Component {
 
     // Hiển thị nhân viên theo phòng ban
     const RenderWithDept = ({ match }) => {
-      const deptId = this.props.dept.dept.find(
-        (dept) => dept.name === match.params.deptname
-      );
-      console.log(deptId);
-
-      return (
-        <DepartmentDetail
-          staff={this.props.staffs.staffs.filter(
-            (staff) => staff.departmentId === deptId.id
-          )}
-        />
-      );
+      const deptId = match.params.deptId;
+      return <DepartmentDetail deptId={deptId} />;
     };
 
     return (
@@ -114,7 +104,7 @@ class App extends Component {
             ></Route>
             <Route
               exact
-              path="/phongban/:deptname"
+              path="/phongban/:deptId"
               component={RenderWithDept}
             ></Route>
             <Route

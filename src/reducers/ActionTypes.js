@@ -15,3 +15,7 @@ export const SEARCH = "SEARCH";
 
 export const DELETE_STAFF = "DELETE_STAFF";
 export const UPDATE_STAFF = "UPDATE_STAFF";
+
+export const STAFFS_DEPT_LOADING = "STAFFS_DEPT_LOADING";
+export const STAFFS_DEPT_FAILED = "STAFFS_DEPT_FAILED";
+export const STAFFS_DEPT = "STAFFS_DEPT";

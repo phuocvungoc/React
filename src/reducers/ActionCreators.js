@@ -246,3 +246,47 @@ export const updateStaff = (staff) => (dispatch) => {
       alert("staff could not be updated\nError: " + error.message);
     });
 };
+
+export const fetchStaffInDept = (deptId) => (dispatch) => {
+  dispatch(staffsDeptLoading(true));
+
+  return fetch(baseUrl + `departments/${deptId}`)
+    .then(
+      (response) => {
+        if (response.ok) {
+          return response;
+        } else {
+          var error = new Error(
+            "Error " +
+              response.status +
+              ": " +
+              response.statusText +
+              ". Please try again later"
+          );
+          error.response = response;
+          throw error;
+        }
+      },
+      (error) => {
+        var errmess = new Error(error.message + ". Please try again later");
+        throw errmess;
+      }
+    )
+    .then((response) => response.json())
+    .then((staffsInDept) => dispatch(staffsInDeptSuccess(staffsInDept)))
+    .catch((error) => dispatch(staffsDeptFailed(error.message)));
+};
+
+export const staffsDeptLoading = () => ({
+  type: ActionTypes.STAFFS_DEPT_LOADING,
+});
+
+export const staffsDeptFailed = (errmess) => ({
+  type: ActionTypes.STAFFS_DEPT_FAILED,
+  payload: errmess,
+});
+
+export const staffsInDeptSuccess = (staffsInDept) => ({
+  type: ActionTypes.STAFFS_DEPT,
+  payload: staffsInDept,
+});
