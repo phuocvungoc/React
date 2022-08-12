@@ -16,6 +16,7 @@ import { Link } from "react-router-dom";
 import { Loading } from "./Loading";
 import { deleteStaff } from "../reducers/ActionCreators";
 import { connect } from "react-redux";
+import { FadeTransform } from "react-animation-components";
 
 const required = (val) => val && val.length;
 const maxLength = (len) => (val) => !val || val.length <= len;
@@ -64,19 +65,26 @@ class StaffList extends Component {
     const staffList = this.state.staffs.staffs.map((staff) => {
       return (
         <div className="col-6 col-md-4 col-lg-2 mt-3" key={staff.id}>
-          <Card className="border border-success rounded">
-            <Button
-              className="fa fa-trash ml-0"
-              aria-hidden="true"
-              onClick={() => this.deleteStaff(staff.id)}
-            />
-            <CardBody className="p-0">
-              <Link to={`/nhanvien/${staff.id}`}>
-                <CardImg src={staff.image} alt={staff.name} />
-              </Link>
-              <CardText className="text-center mt-4">{staff.name}</CardText>
-            </CardBody>
-          </Card>
+          <FadeTransform
+            in
+            transformProps={{
+              exitTransform: "scale(0.2) translateY(-50%)",
+            }}
+          >
+            <Card className="border border-success rounded">
+              <Button
+                className="fa fa-trash ml-0"
+                aria-hidden="true"
+                onClick={() => this.deleteStaff(staff.id)}
+              />
+              <CardBody className="p-0">
+                <Link to={`/nhanvien/${staff.id}`}>
+                  <CardImg src={staff.image} alt={staff.name} />
+                </Link>
+                <CardText className="text-center mt-4">{staff.name}</CardText>
+              </CardBody>
+            </Card>
+          </FadeTransform>
         </div>
       );
     });

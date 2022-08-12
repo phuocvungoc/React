@@ -7764,7 +7764,7 @@
     "loose-envify" "^1.1.0"
     "prop-types" "^15.6.0"
 
-"react-router-dom@^4.3.1":
+"react-router-dom@^4.2.2":
   "integrity" "sha512-c/MlywfxDdCp7EnB7YfPMOfMD3tOtIjrQlj/CKfNMBxdmpJP8xcz5P/UAFn3JbnQCNUxsHyVVqllF9LhgVyFCA=="
   "resolved" "https://registry.npmjs.org/react-router-dom/-/react-router-dom-4.3.1.tgz"
   "version" "4.3.1"
