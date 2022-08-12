@@ -28,7 +28,9 @@ class StaffList extends Component {
     super(props);
     this.state = {
       isModalOpen: false,
-      staffs: this.props.staffs,
+      staffs: this.props.staffs.staffs
+        ? this.props.staffs.staffs
+        : this.props.staffs,
     };
     this.toggleModal = this.toggleModal.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -62,7 +64,7 @@ class StaffList extends Component {
   }
 
   render() {
-    const staffList = this.state.staffs.staffs.map((staff) => {
+    const staffList = this.state.staffs.map((staff) => {
       return (
         <div className="col-6 col-md-4 col-lg-2 mt-3" key={staff.id}>
           <FadeTransform

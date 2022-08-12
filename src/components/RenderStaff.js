@@ -111,6 +111,7 @@ class RenderStaff extends Component {
                     model=".name"
                     id="name"
                     name="name"
+                    defaultValue={this.props.staff.name}
                     className="col-6 ml-3 form-control"
                     placeholder="Họ và tên"
                     validators={{
@@ -137,6 +138,7 @@ class RenderStaff extends Component {
                     model=".doB"
                     id="doB"
                     name="doB"
+                    defaultValue={dateFormat(this.props.staff.doB, "isoDate")}
                     className="col-6 ml-3 form-control"
                     type="date"
                     validators={{
@@ -162,6 +164,10 @@ class RenderStaff extends Component {
                     type="date"
                     id="startDate"
                     name="startDate"
+                    defaultValue={dateFormat(
+                      this.props.staff.startDate,
+                      "isoDate"
+                    )}
                     validators={{
                       required,
                     }}
@@ -185,7 +191,7 @@ class RenderStaff extends Component {
                     type="select"
                     id="department"
                     name="department"
-                    defaultValue="Sale"
+                    defaultValue={this.props.staff.department}
                     validators={{
                       required,
                     }}
@@ -215,7 +221,7 @@ class RenderStaff extends Component {
                     type="salaryScale"
                     id="salaryScale"
                     name="salaryScale"
-                    defaultValue="1"
+                    defaultValue={this.props.staff.salaryScale}
                     validators={{
                       required,
                       isNumber,
@@ -241,7 +247,7 @@ class RenderStaff extends Component {
                     type="annualLeave"
                     id="annualLeave"
                     name="annualLeave"
-                    defaultValue="0"
+                    defaultValue={this.props.staff.annualLeave}
                     validators={{
                       required,
                       isNumber,
@@ -267,7 +273,7 @@ class RenderStaff extends Component {
                     type="overTime"
                     id="overTime"
                     name="overTime"
-                    defaultValue="0"
+                    defaultValue={this.props.staff.overTime}
                     validators={{
                       required,
                       isNumber,
